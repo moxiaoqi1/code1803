@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
  code1803b1
 课堂代码
 
@@ -31,14 +31,4 @@
   #拉去代码
   $ git pull origin master
 
-  --
-  
 
-
-=======
-# code1803
-课堂代码
-
-#你好
-ccqqdsfcsdv
->>>>>>> bd351fe0ce28269adb8f680d598cfbce8e2534a8
