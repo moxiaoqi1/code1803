@@ -31,5 +31,5 @@
   拉去代码
   $ git pull origin master
   
-  ...
+  
 
