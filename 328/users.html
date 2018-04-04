@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<table id="tbl"></table>
+<script>
+        var users=[
+                        {name: "张三", age: 31, sex: '男'},
+                        {name: "李四", age: 22, sex: '男'},
+                        {name: "小张", age: 23, sex: '女'},
+                        {name: "莫小二", age: 21, sex: '男'},
+                        {name: "莫六", age: 31, sex: '女'},
+                    ];
+            //将数组进行迭代==》回调处理每一次迭代的逻辑
+            //三个参数 当前的数组元素  当前元素的索引 数组本身
+            //forEach ；filter； some ；every
+           var str= users.map(function(item,index,arr){
+               return`
+               <tr>
+               <td>${item.name}</td>
+               <td>${item.age}</td>
+               <td>${item.sex}</td>
+               </tr>
+               `;
+        });
+        //reduce 对数组进行统计
+        str =str.reduce(function(qian,dangqian,index,arr){
+
+           return qian+dangqian;
+        });
+//        console.log(str);
+        var tbl=document.getElementById('tbl');
+        tbl.innerHTML= str;
+
+        var result=[1,2,3,4,5,6,7,8].filter(function(item,index,arr){
+           return item%2==0;
+        });
+        console.log(result);
+
+       var b=[1,2,3,4,5,6,7,8].some(function(item,index,arr){
+          return item>5;//every 需要每一个都大于5 而some只需要一个大
+       });
+      console.log(b);
+
+     //排序
+    var arr2=[];
+    //填充一百个随机数，取值范围从12-97 整数
+    for(var i=0;i<100;i++){
+        arr2[i]=Math.floor(Math.random()*86)+19;//0-1 不包括1
+
+        /*
+        * 如果a大则返回整数
+        * 如果b大则返回负数
+        * 如果  a,b相等则返回0
+        * */
+
+        arr2.sort(function(a,b){
+            return b-a;
+//            if(a>b){
+//                return 12;
+//            }else if(a<b){
+//                return -12;
+//            }else {
+//                return 0;
+//            }
+
+        });
+    }
+         users.sort(function(a,b,c){
+            return a.age<= b.age && a.age>=18;
+         });
+        users.sort(function(a,b){
+            var r= b.age- b.age;
+            if(r==0){
+                return b.sex.charCodeAt(0)- a.sex.charCodeAt(0);
+
+            }  return r;
+        });
+    users.map(function(a){
+        return`<tr>
+        <td>${a.name}</td>
+        <td>${a.age}</td>
+        <td>${a.sex}</td>
+        </tr>`
+        ;
+    }).reduce(function(a,b){
+        return a+b;
+    });
+    var tbl=document.querySelector("tbl");
+    tbl.innerHTML=tab_str;
+    /*map => 每一次回调值组成新的元素 新数组的长度和原数组的长度一样*/
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品列表页</title>
+    <style>
+        *{/*样式的重置*/
+            margin:0;
+            padding: 0;
+            list-style: none;
+        }
+        #root{
+
+            width: 700px;
+            min-height: 800px;
+            margin: 0px auto;
+            position: relative;
+        }
+        .layout-box{
+             position: absolute;
+        }
+        .mid{
+            min-height: 600px;
+            top: 100px;
+        }
+        #head{
+
+            width: 100%;
+            height: 100px;
+
+        }
+        #left{
+            background: beige;
+            width: 80%;
+
+        }
+        #right{
+            background: lightblue;
+            width: 20%;
+            right: 0;
+        }
+        #foot{
+            background:cadetblue;
+            width: 100%;
+            height: 100px;
+            bottom: 0;
+        }
+        #nav{
+            width: 100%;
+        }
+        #nav li{
+            float: left;
+            width:12.5%;
+            height: 30px;
+            background: #ccc;
+            text-align: center;
+        }
+        #nav li>a{
+
+            line-height: 30px;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <div id="head" class="layout-box">
+            <ul id="nav">
+                <li><a href="#">列表项</a> </li>
+                <li><a href="#">列表项</a> </li>
+                <li><a href="#">列表项</a> </li>
+                <li><a href="#">列表项</a> </li>
+                <li><a href="#">列表项</a> </li>
+                <li><a href="#">列表项</a> </li>
+                <li><a href="#">列表项</a> </li>
+                <li><a href="#">列表项</a> </li>
+
+            </ul>
+            <h1>淘宝</h1>
+        </div><!--页首结束-->
+        <div id="left" class="layout-box mid"></div><!--右边栏结束-->
+        <div id="right" class="layout-box mid"></div><!--左边栏结束-->
+        <div id="foot" class="layout-box"></div><!--页脚结束-->
+    </div>
+
+</body>
+</html>

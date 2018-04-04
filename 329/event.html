@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #but{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+            height: 100px;
+            width: 100px;
+        }
+        #munue{
+            height: 100px;
+            width: 100px;
+            position: fixed;
+            left:0;
+            top:0;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        #munue li{
+            list-style: none;
+
+        }
+    </style>
+
+</head>
+<body>
+    <button id="but"  >点我试试</button>
+    <div id="munue"  style="display: none" onclick="">
+     <li>重新加载</li>
+     <li>取消</li>
+     <li>检查</li>
+     <li>qwerrt</li>
+</div>
+
+<script>
+     var but=document.querySelector("#but");
+     var munue =document.querySelector("#munue");
+
+    but.onclick =function(e){
+        console.log(e);
+    }
+
+    document.body.oncontextmenu=function(e){
+        e.stopPropagation();//取消冒泡
+        e.preventDefault();//取消浏览器的默认行为
+        munue.style.top= e.clientY+"px";
+        munue.style.left= e.clientX+"px";
+
+        munue.onmouseup=munue.style.display='block';
+
+
+ }
+
+
+
+
+</script>
+</body>
+</html>

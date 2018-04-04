@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>接收用户的输入</title>
+    <style>
+
+        body{
+
+
+        }
+        #tb1{
+            text-align: center;
+            width: 500px;
+            height: 50px;
+        }
+
+        .form-item {
+            margin: 10px 0;
+        }
+
+        .form-item label {
+            width: 100px;
+            height: 30px;
+            display: inline-block;
+            text-align: right;
+            font-weight: bold;
+            color: #333;
+
+        }
+
+        .form-item input {
+            height: 25px;
+            width: 345px;
+            border-radius: 5px;
+        }
+        input[type=radio]{
+            width: 40px;
+        }
+    </style>
+</head>
+<body>
+<table id="tb1" border="1" cellpadding="5" cellspacing="2">
+    <tr>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>性别</td>
+        <td>段位</td>
+        <td>编辑</td>
+    </tr>
+</table>
+<form id="ff">
+    <div class="form-item">
+        <label for="name">姓名：</label>
+        <input id="name" type="text" name="name">
+    </div>
+
+    <div class="form-item">
+        <label>性别：</label>
+        男 <input type="radio" name="sex" value="man">
+        女 <input type="radio" name="sex" value="girl">
+    </div>
+
+    <div class="form-item">
+        <label for="age">年龄：</label>
+        <input id="age" type="text" name="age">
+    </div>
+
+
+    <div class="form-item">
+        <label></label>
+        <select name="duanwei" id="duanwei" name="duanwei">
+            <option value="黄金">黄金</option>
+            <option value="青铜">青铜</option>
+            <option value="王者">王者</option>
+        </select>
+    </div>
+
+    <div class="form-item">
+        <label></label>
+        <input type="button" value="提交" onclick="subform()">
+    </div>
+
+</form>
+
+<script>
+    var tbl = document.getElementById('tb1')
+    function subform() {
+        var uname = document.getElementById('name')
+        var Age = document.getElementById('age')
+        var Sex = document.getElementById('sex')
+        var Duanwei = document.getElementById('duanwei')
+
+        var str = `<tr >
+    <td>${uname.value}</td>
+    <td>${Age.value}</td>
+    <td>男</td>
+    <td>${Duanwei.value}</td>
+    <td><a href="javascript:del()">删除</a>|<a href="javascript:update()">更新</a></td>
+    </tr>`;
+        tbl.innerHTML+=str;
+
+    }
+    function del(){
+
+    }
+
+
+</script>
+</body>
+</html>

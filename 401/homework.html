@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+
+</head>
+<body>
+<form>
+     姓名: <input type="text" name="uName"><br>
+     密码: <input type="password" name="pass"><br>
+     再次输入密码：<input type="password"  id="passagian"><br>
+
+</form>
+    <a href="javascript:regist()">确认注册</a>
+    <script>
+        var ff=document.forms[0];
+
+        var users =localStorage.getItem('users');//获取本地存储
+        users &&(users=JSON.parse(users))//如果存在该内容则进行json的jiex
+        users ||(users=[])//如果不存在该内容则创建一个数组
+
+
+
+
+        function regist(){
+                var name=ff.uName.value;//获取用户文本框
+                var pass=ff.pass.value;//获取密码
+                var passagian=document.getElementById('passagian').value;
+                if(passagian!==pass){
+                alert("两次密码输入不一致，请重新输入");
+                return;
+                }
+
+                if(name==""||pass==""){
+                    alert("用户名和密码不能为空，请输入用户和密码");
+                    return;
+                }
+
+                var obj={
+                    name:name,
+                    pass:pass
+                }
+                users.push(obj);//将新注册用户添加到用户列表
+                localStorage.setItem('users',JSON.stringify(users));
+                  //将用户列表重新写入本地存储
+            location.href= "login.html";//页面跳转
+
+             }
+
+    </script>
+</body>
+</html>

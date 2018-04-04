@@ -1,0 +1,69 @@
+ 作业：1、一个文本框 用户输入小写字母 然后同步将它转换成大写字母放在h1标题中
+       2、 将以下的文本转置"this is my info"=>"ofni ym si siht"
+       3、将以下数组，50岁以上的人去掉 18岁以以下的人去掉 显示表格
+        var users=[
+                        {name: "张三", age: 21, sex: '男'},
+                        {name: "李四", age: 22, sex: '男'},
+                        {name: "小张", age: 23, sex: '女'},
+                        {name: "莫小二", age: 11, sex: '男'},
+                        {name: "莫六", age: 31, sex: '女'},
+                    ];
+                    要求：把年龄大的排在前面 如果年龄相等 把男性排前
+
+
+ 笔记：api|参数|说明
+ String.fromCharCode| 编码|将一个编码转化成字符串
+ 'a'.charCodeAt(0)|索引|将字符串的索引位置的字符转化成编码
+ ad. toUpperCase()||将字符串转大写
+ "sdacadSSSS".toLocaleLowerCase()||将字符串转小写
+ str.endsWith(".png");|| 判断结尾的字符串|判断字符串是不是以**结尾
+ str.indexOf("tem")||查找子字符串|查找子字符串在字符串中的位置
+ str.substring(3,7)|开始位置，结束位置（不包括）|截取一段字符
+ str.split("")|指定分隔符|将一个字符串切割一个字符串组
+ str.replate()|被替换的字符串，日还成新值|将字符串进行替换
+ str.search()|查找的条件|在字符串中查找
+ str.trim()|去掉前后空格
+
+   练习：arr.push(67) 从后面插入数字
+         4
+        arr
+        (4) [1, 2, 3, 67]
+        arr.unshift(12)从前面插入数字
+        5
+        arr
+        (5) [12, 1, 2, 3, 67]
+
+
+      数据结构： 栈：先进（的人）后出
+                  队列：先进（的人）先出
+
+     队列 < arr.pop()从数组的后面输出
+            arr.shift()从数组的前面输出 >
+
+      栈      <  arr.pop();从数组的后面弹出
+               arr.push();从后面加入数组  >
+
+磁盘：便宜 持久化 大
+内存：小 不持久
+1p=1024g
+
+css知识结构
+
+css 选择器
+css样式
+css布局
+
+css选择器：
+
+   *选择所有
+
+   id选择器：优势定义容器 优先级最高（行内style优先级比id高  后面加 ！important；最高 ） 要保证唯一
+
+   class选择器：
+
+   body标签元素选择器：
+
+
+    <style></style> 内嵌
+
+    <link rel="stylesheet" type="text/css" hred="">外联

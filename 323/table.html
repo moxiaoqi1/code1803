@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>a</title>
+    <style>
+        #tb1{
+            width: 300px;
+        }
+        #tb1 tr{
+
+            height: 10px;
+            background: #cccccc;
+            /*background-color: #cccccc;*/
+        }
+    </style>
+
+</head>
+<body>
+<table id="tb1" border="1" cellpadding="10" cellspacing="2">
+    <tr>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>性别</td>
+        <td>段位</td>
+        <td>编辑</td>
+    </tr>
+</table>
+
+<button >添加</button>
+
+<form id="ff" >
+    <input type="text" id="uname" name="uname" >
+    <input type="button" onclick="addTr()" value="确认"><!--这个按钮不会提交-->
+    <input type="button" onclick="updateTr()" value="确认修改">
+    <select name="duanwei" id="duanwei" name="Duanwei">
+        <option value="黄金">黄金</option>
+        <option value="青铜">青铜</option>
+        <option value="王者">王者</option>
+    </select>
+</form>
+
+<script>
+    var tbl = document.getElementById('tb1');
+    var num=0;
+    function addTr(){
+        var uname =document.getElementById('uname');
+        var duanwei=document.getElementById('duanwei');
+        var sex=document.getElementById('sex')
+
+    var str=` <tr id="haha${++num}">
+        <td>${uname.value}</td>
+        <td>18</td>
+        <td>男</td>
+        <td>${duanwei.value}</td>
+        <td><a href="javascript:del(${num})">删除</a>|<a href="javascript:update(${num})">更新</a></td>
+    </tr>`;
+
+        tbl.innerHTML += str;
+
+    }
+    function del(abc) {
+        var tr = document.getElementById("haha" + abc);
+        tr.remove();
+
+    }
+
+    var updateTrr=null;
+    function update(abc){
+        var tr = document.getElementById("haha" + abc);
+        updateTrr=tr;
+        var uName= tr.children[0].innerText;
+        var ff=document.getElementById('ff');
+        ff.uname.value =uName;
+
+        var duanwei= tr.children[3].innerText;
+        var ff=document.getElementById('ff');
+        ff.duanwei.value =Duanwei;
+    }
+
+
+    function  updateTr(){
+         var ff=document.getElementById('ff');
+        updateTrr.children[0].innerText=ff.uname.value;
+        updateTrr.children[3].innerText=ff.duanwei.value;
+    }
+
+</script>
+
+</body>
+</html>

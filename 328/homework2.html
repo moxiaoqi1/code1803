@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<script>
+/*2、 将以下的文本转置"this is my info"=>"ofni ym si siht"*/
+
+    var str1="this is my info";
+    var arr=[];
+    for(var i=0;i<str1.length;i++){
+        arr.push(str1[i]);
+    }
+    for (var i=0;i<str1.length;i++){
+        document.body.innerHTML+=arr.pop();
+    }
+</script>
+</body>
+</html>

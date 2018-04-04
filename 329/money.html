@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+  <script>
+
+
+      var a=4576;
+      var result= [100,50,20,20,5,1].map(function(item){
+            var zhangshu=Math.floor(a/item);
+            a-=zhangshu*item;
+           return zhangshu;
+      }).reduce(function(a,b){
+          return a+b;
+      })
+  </script>
+</body>
+</html>

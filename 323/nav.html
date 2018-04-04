@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="nav.css">
+    <style>
+        #root {
+            width: 700px;
+            margin: 0 auto;
+            position: relative; /*如果子元素的绝对*/
+            min-height: 780px; /*最小高度*/
+        }
+
+        #head {
+            color: #666666;
+
+        }
+
+        .mid { /*左边和右边的共同点*/
+            position: absolute; /*绝对定位*/
+            min-height: 500px;
+            top: 130px;
+        }
+
+        #left {
+
+            width: 280px;
+            padding: 20px;
+        }
+
+        #left li {
+            width: 240px;
+            height: 30px;
+            border: 1px solid #ccc;
+        }
+
+        #left li:hover {
+            background: red;
+        }
+
+        #left li:hover a {
+            color: #aaa;
+        }
+
+        #left li a {
+            line-height: 30px;
+            text-decoration: none;
+            color: #666;
+            margin-left: 10px;
+
+        }
+
+        #right {
+            right: 0;
+            width: 420px;
+            background: cornflowerblue;
+        }
+
+        #foot {
+            background: black;
+            height: 150px;
+            position: absolute;
+            width: 700px;
+            bottom: 0;
+        }
+
+        #logo {
+            height: 100px;
+            overflow: hidden;
+        }
+
+        #logo h1 {
+
+        }
+
+        .yincang {
+            display: none;
+        }
+
+        #xuanyan {
+            font-family: 华文楷体;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+<div id="root">
+    <div id="head">
+        <div id="logo">
+            <h1>虹猫学院</h1>
+            <span id="xuanyan">明天的你一定会感谢今天努力敲代码的你</span>
+        </div>
+        <ul id="nav">
+            <li>
+                <div class="li-before">列表项</div>
+                <div class="li-after">列表项</div>
+            </li>
+            <li>
+                <div class="li-before">列表项</div>
+                <div class="li-after">列表项</div>
+            </li>
+            <li>
+                <div class="li-before">列表项</div>
+                <div class="li-after">列表项</div>
+            </li>
+            <li>
+                <div class="li-before">列表项</div>
+                <div class="li-after">列表项</div>
+            </li>
+            <li>
+                <div class="li-before">列表项</div>
+                <div class="li-after">列表项</div>
+            </li>
+            <li>
+                <div class="li-before">列表项</div>
+                <div class="li-after">列表项</div>
+            </li>
+        </ul>
+    </div>
+
+    <div id="left" class="mid">
+
+        <ul>
+            <li><a href="javascript:show(0)">用户列表</a></li>
+            <li><a href="javascript:show(1)">新增用户</a></li>
+            <li><a href="javascript:show(2)">修改用户</a></li>
+            <li><a href="javascript:show(3)">充值</a></li>
+
+        </ul>
+
+    </div>
+    <div id="right" class="mid">
+        <div class="child-content yincang">用户列表</div>
+        <div class="child-content yincang">新增用户</div>
+        <div class="child-content yincang">修改用户</div>
+        <div class="child-content yincang">充值</div>
+    </div>
+    <div id="foot"></div>
+
+</div>
+<script>
+    var rr = document.getElementById('right');
+
+    function show(e) {
+
+        for (var i = 0; i < 4; i++) {
+            if (e == i) {
+                rr.children[e].classList.remove('yincang');
+            } else {
+                rr.children[i].classList.add('yincang');
+            }
+
+        }
+    }
+</script>
+</body>
+</html>

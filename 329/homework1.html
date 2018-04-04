@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>装修</title>
+
+</head>
+<body>
+
+<!--
+回调作业：
+房子交房  水电工 泥工 木工 油漆工  把钥匙给他们
+-->
+
+<script>
+
+//            function zhuangxiu(){
+//                function shuidiangong(a){
+//                    alert("给水电工钥匙");
+//                    return a;
+//                }
+//                function nigong(b){
+//                    alert("给泥工钥匙");
+//                     return b;
+//                }
+//                function mugong(c){
+//                    alert("给木工钥匙");
+//                    return c;
+//                }
+//                function youqigong(d){
+//                    alert("给油漆工钥匙");
+//                    return d;
+//                }
+//             shuidiangong(nigong(mugong(youqigong())));
+//            }
+//               zhuangxiu();
+
+        function house(){
+            this.zhuangxiu=function (visitor){
+                visitor.doThing("钥匙");
+            }
+        }
+         function Visitor(type){
+             this.type =type;
+             this.doThing=function(a){
+                 console.log(`
+                 我是${this.type}工人,我拿到了${a}
+                 进行装修
+                 `);
+
+             }
+         }
+    var house =new  house();
+    house.zhuangxiu(new Visitor("水电工"));
+
+    house.zhuangxiu(new Visitor("泥工"));
+    house.zhuangxiu(new Visitor("木工"));
+    house.zhuangxiu(new Visitor("油漆工"));
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
