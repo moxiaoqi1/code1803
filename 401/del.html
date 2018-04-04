@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" type="text/css" href="css.css">
+
+</head>
+<body>
+<h1 id="h1">完善个人信息</h1>
+<form id="ff">
+
+    <div class="form-item">
+        <label for="age" >年龄：</label>
+        <input type="text" name="age" id="age">
+        </div>
+<br>
+    <div class="form-item1">
+        <label >昵称：</label>&nbsp;
+        <input type="text" name="nichen" id="nichen">  &nbsp;
+        <label >籍贯：</label>&nbsp;
+        <input type="text" name="jiguan" id="jiguan">
+    </div>
+
+    <div class="form-item">
+        <label>性别：</label>
+        男 <input type="radio" name="sex" value="man">
+        女 <input type="radio" name="sex" value="girl">
+    </div>
+    <div class="form-item1">
+        <label>民族：</label>&nbsp;
+        <input type="text"  name="mingzu" id="mingzu">  &nbsp;
+        <label>身高：</label>&nbsp;
+        <input type="text" name="shenggao" id="shenggao"><br><br>
+        <label>体重：</label>&nbsp;
+        <input type="text" name="tizhong" id="tizhong">  &nbsp;
+        <label>生肖：</label>&nbsp;
+        <input type="text" name="shengxiao" id="shengxiao">
+    </div>
+    <div>
+        <input type="button" value="添加" id="button1" onclick="subform()"> &nbsp;&nbsp;&nbsp;
+        <input type="button" value="修改" id="button2" onclick="update()">
+    </div>
+</form><br><br>
+<table id="tb1" border="1" cellpadding="10" cellspacing="2">
+    <tr>
+        <td>姓名</td>
+
+        <td>年龄</td>
+        <td>昵称</td>
+        <td>籍贯</td>
+        <td>性别</td>
+        <td>名族</td>
+        <td>身高</td>
+        <td>体重</td>
+        <td>生肖</td>
+    </tr>
+</table>
+<script type="text/javascript">
+    var tbl = document.getElementById('tb1')
+     function subform() {
+         var age = document.getElementById('age')
+         var nichen=document.getElementById('nichen')
+         var jiguan = document.getElementById('jiguan')
+         var sex = document.getElementById('sex')
+         var mingzu=document.getElementById('mingzu')
+         var shenggao=document.getElementById('shenggao')
+         var tizhong=document.getElementById('tizhong')
+         var shengxiao=document.getElementById('shengxiao')
+
+
+
+         var users =localStorage.getItem('users');
+         users=JSON.parse(users);
+         users.map(function (item){
+             return name=item.name;
+
+         });
+
+
+
+
+        var str = `<tr  >
+    <td>${name.value}</td>
+
+    <td>${age.value}</td>
+    <td>${nichen.value}</td>
+    <td>${jiguan.value}</td>
+    <td>男</td>
+    <td>${mingzu.value}</td>
+    <td>${shenggao.value}</td>
+    <td>${tizhong.value}</td>
+    <td>${shengxiao.value}</td>
+
+    </tr>`;
+        tbl.innerHTML+=str;
+
+    }
+    var updateTrr=null;
+    function update(a){
+
+
+
+    }
+
+
+
+
+
+    //1、让表单完善
+
+
+
+    //
+</script>
+
+
+</body>
+</html>

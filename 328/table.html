@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+</head>
+<body>
+<table id="tbl">
+
+</table>
+    <script type="text/javascript">
+        var users=[
+            {name: "张三", age: 21, sex: '男'},
+            {name: "李四", age: 22, sex: '男'},
+            {name: "小张", age: 24, sex: '女'},
+            {name: "莫小二", age: 11, sex: '男'},
+            {name: "莫六", age: 31, sex: '女'},
+        ];
+        var tbl=document.getElementById("tbl");
+
+        var str=`
+        <tr>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>性别</td>
+        <td>生肖</td>
+        </tr>
+        `;
+
+        var shengXiao=[ "狗","鸡","猴",
+            "羊","马","蛇","龙","兔",
+            "虎","牛","鼠","猪"];
+
+        for (var i in users){
+            str +=`<tr>
+            <td>${users[i].name}</td>
+            <td>${users[i].age}</td>
+            <td>${users[i].sex}</td>
+            <td>${shengXiao[users[i].age%12]}</td>
+            </tr>
+            `;
+        }
+        tbl.innerHTML +=str;
+    </script>
+</body>
+</html>

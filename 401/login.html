@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎来到登录界面</title>
+     <link rel="stylesheet" type="text/css" href="css.css">
+
+</head>
+<body>
+<form id="form">
+    <h1 id="login"  >登  录</h1>
+    <div class="form-item">
+        <label for="name">姓名:</label>
+        <input id="name" type="text" name="uName">
+
+    </div >
+    <div class="form-item">
+        <label for="name">密码：</label>
+        <input type="password" name="pass" id="pass">
+    </div>
+
+
+
+  <br>
+    <div class="form-item">
+        <label></label>
+        <input type="button" id="button" value="登录" onclick="login()"><br>
+    </div>
+
+
+</form>
+<script>
+    function login() {
+        var ff = document.forms[0];
+        var uname = ff.uName.value;
+        var pass = ff.pass.value;
+
+
+        var users =localStorage.getItem('users');
+        if (!users) {
+            alert("请先注册");
+            return;
+        }
+        users = JSON.parse(users);
+        if (!Array.isArray(users)) {
+            localStorage.clear();
+            alert("登录失败!请重新注册");
+            return;
+        }
+        var has = users.every(function (item) {
+            return item.name == uname && item.pass == pass;
+        });
+        if (has) {
+            alert("登录失败");
+        } else {
+            alert("登录成功");
+            location.href = "del.html";//页面跳转
+        }
+    }
+</script>
+
+
+</body>
+</html>

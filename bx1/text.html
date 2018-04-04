@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .btn{
+            height: 100px;
+            width: 100px;
+            display: block;
+            border-radius: 50%;/*圆角*/
+            border: 1px solid;
+            box-shadow: 4px 2px 18px 2px;
+            text-align: center;
+            line-height: 100px;/*垂直居中*/
+        }
+       /* 鼠标悬停*/
+        .btn:hover{
+            background: yellow;
+            font-size: 1.2em;
+            color: #4caf50;
+            /*position: absolute;
+            left: 50%;
+            top: 50%;*/
+            /*transform: translate(-50%,-50%);移动*/
+            transform: rotate(90deg);/*旋转*/
+        }
+        /*鼠标悬停*/
+        .btn:active{
+            background: red;
+            font-size: 3.2em;
+            color: #fff;
+            font-family: 黑体;
+        }
+
+
+    </style>
+
+</head>
+<body>
+        <a href="javascript:void(0)" class="btn" >点我试试</a>
+        <div></div>
+</body>
+</html>

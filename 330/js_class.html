@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<script>
+    LaoZhang ={
+        KaiChe:function(Car,target){
+            name:"老张";
+            Car.go(target);
+        }
+    }
+    DongBei ={
+        name:"中国东北的"
+    }
+    YiYuan={
+        FengZheng:function(Ren){
+            console.log(`这里是一家右良心的医院，我们包治百病，给${Ren.name}缝了针`);
+        }
+    }
+    DongBeiRen={
+        SendTaYiYuan:function(Ren){
+             console.log(`我是东北人，东本人是号人，送${Ren.name}去医院了`);
+        }
+    }
+    Car={
+        go:function(target){
+            console.log(`
+            我是一汽车，现在要去${target.name}，发生了车祸`);
+        }
+    }
+    LaoZhang.kaiche(Car,DongBei);
+    var ren=DongBeiRen.SendTaYiYuan(LaoZhang);
+    YiYuan.FengZheng(Ren);
+
+</script>
+</body>
+</html>

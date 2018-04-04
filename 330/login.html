@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+        <h1>登录界面</h1>
+        <form>
+            姓名：<input type="text" name="uName"><br>
+            密码：<input type="password" name="pass"><br><br>
+            <input type="button" value="登录" onclick="login()">
+        </form>
+        <script>
+            function login(){
+                var ff=document.forms[0];
+                var name=ff.uName.value;
+                var pass=ff.pass.value;
+                var users=localStorage.getItem('users');
+                if (!users){
+                    alert("请先注册");
+                    return;
+                }
+                users=JSON.parse(users);
+                if(!Array.isArray(users)){
+                    localStorage.clear();
+                    alert("登录失败！请重新注册");
+                    return;
+                }
+                var has=users.some(function(item){
+                    return item.name==name&&item.pass==pass;
+                });
+                if(has){
+                    alert("登录成功");
+                }
+                else {
+                    alert("登录失败");
+                }
+            }
+        </script>
+</body>
+</html>

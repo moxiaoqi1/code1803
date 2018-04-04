@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body {
+
+        }
+
+        #tb1 {
+            text-align: center;
+            width: 500px;
+            height: 50px;
+        }
+
+        .form-item {
+            margin: 10px 0;
+        }
+
+        .form-item label {
+            width: 100px;
+            height: 30px;
+            display: inline-block;
+            text-align: right;
+            font-weight: bold;
+            color: #333;
+
+        }
+
+        .form-item input {
+            height: 25px;
+            width: 345px;
+            border-radius: 5px;
+        }
+
+        input[type=radio] {
+            width: 40px;
+        }
+    </style>
+</head>
+<body>
+<table id="tb1" border="1" cellpadding="5" cellspacing="2">
+    <tr>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>性别</td>
+        <td>生肖</td>
+    </tr>
+</table>
+    <div id="root">
+    <div id="head">
+    </div>
+    <div id="middle">
+        <div id="left"></div>
+        <div id="right"></div>
+    </div>
+    <div id="foot"></div>
+</div>
+
+<script type="text/javascript">
+
+
+/*小明23岁 生日8月9 小芳比他小5岁 零3个月零12天 问小芳的出生日?问小芳在今年的生日是星期几？*/
+
+       var date1=new Date();
+
+       var year=date1.setFullYear(2018-23+5);
+       var month=date1.setMonth(7+3);
+       var day=date1.getDate(9+12);
+
+       var year1=new Date(year).getFullYear();
+       var month1=new Date(month).getMonth()+1;
+       var day1=new Date(day).getDate();
+
+       var birthday=year1+"-"+month1+"-"+day1;
+
+       var time18=Date.parse('2018-11-21');
+       var str=new Date(time18);
+
+       document.body.innerHTML="小芳出生年月是"+birthday+"<br/>" +
+               "小芳在2018年的生日是"
+               +str.getMonth()+"月"+str.getDate()+"号";
+
+
+
+
+
+//     var date =new Date();
+//     var hours = date.getHours();
+//     var minutes = date.getMinutes();
+//     var seconds = date.getSeconds();
+//     setInterval(function () {
+//     if (seconds<59){
+//     seconds++;
+//     }else {
+//     seconds=seconds-59;
+//     }
+//     alert(hours+":"+minutes+":"+seconds);
+//     }, 1000);
+
+</script>
+
+</body>
+</html>

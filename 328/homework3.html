@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<table id="tbl"></table>
+<script>
+     var users=[
+            {name: "张三", age: 21, sex: '男'},
+            {name: "李四", age: 22, sex: '男'},
+            {name: "小张", age: 22, sex: '女'},
+            {name: "莫小二", age: 11, sex: '男'},
+            {name: "莫六", age: 31, sex: '女'},
+             {name: "莫q", age: 31, sex: '男'},
+        ];
+    /**
+     * filter 过滤 回调反回false则滤掉
+     * */
+      users =users.filter(function(a,b,c){
+          //50 岁以上的人去掉 18岁以下的人去掉
+          return a.age<=50 && a.age>=18;
+      });
+
+    //要求把年龄大的排在前面 如果年龄相等 则男生排在前面
+    users.sort(function(a,b){
+      var r = b.age- a.age;
+        if (r==0){
+            return b.sex.charCodeAt(0)- a.sex.charCodeAt(0);
+        }
+        return r;
+    });
+
+    var tbl=  users.map(function(a){
+        return`<tr>
+        <td>${a.name}</td>
+        <td>${a.age}</td>
+        <td>${a.sex}</td>
+        </tr>
+        `;
+    }).reduce(function(a,b){//reduce 将每次返回的值合并成返回值 用于统计
+        return a+b;
+    });
+
+    var tbl=document.querySelector("#tbl");
+    tbl.innerHTML=tab_str;
+
+</script>
+</body>
+</html>

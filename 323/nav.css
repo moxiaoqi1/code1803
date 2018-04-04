@@ -1,0 +1,35 @@
+
+
+        *{/*通配符选择器*/
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #nav{/*id选择器*/
+            height: 30px;
+            width: 600px;
+            margin: 0px auto;/*快的居中*/
+            overflow: hidden;
+        }
+        #nav li{/*后代选择器*/
+            float: left;
+            height: 30px;
+            width: 100px;
+            background:red;/*背景颜色*/
+            text-align: center;/*水平居中*/
+            line-height: 30px;/*垂直居中*/
+            color: #fff;/*前景颜色*/
+        }
+
+        .li-after{
+            background: yellow;
+        }
+        #nav li{
+           transition:all 1s;
+        }
+       /* #nav li:hover.li-before{
+            display: none;!*隐藏*!
+        }*/
+        #nav li:hover{
+            transform: translate(0,-100%);
+        }

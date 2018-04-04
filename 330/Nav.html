@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+         <form>
+             姓名：<input type="text" name="uName"><br>
+             密码：<input type="password" name="pass" id=""><br>
+             再次输入密码：<input type="password" id="passagian"><br>
+         </form>
+         <a href="javascript:regist()">确认并注册</a>
+         <script>
+             var ff=document.forms[0];
+             var users=localStorage.getItem('users');//获取本地存储
+             users && (users=JSON.parse(users))//如果存在该内容进行JOSN的解析
+             users || (users=[])//如果不存在该内容则创建
+
+
+             function regist(){
+             var name=ff.uName.value;
+             var pass=ff.pass.value;
+             var passagian=document.getElementById("passagian").value;
+                 if(passagian!=pass){
+                     alert("两次密码不一致，请重新输入");
+                     return;
+                 }
+                 var obj={
+                     name:name,
+                     pass:pass
+                 }
+                 users.push(obj);
+                 localStorage.setItem('users',JSON.stringify(users));
+             location.href="login.html"
+             }
+         </script>
+</body>
+</html>
